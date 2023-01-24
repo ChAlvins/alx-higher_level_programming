@@ -2,5 +2,5 @@
 
 
 '''defining a class square'''
-Class Square:
+class Square:
     pass  # an empty class
