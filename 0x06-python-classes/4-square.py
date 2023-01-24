@@ -4,6 +4,7 @@
 
 class Square:
     """square with a private instance attribute: size"""
+
     def __init__(self, size=0):
         """
         initializing the square
@@ -20,7 +21,7 @@ class Square:
         """getter of size
         returns: size of square
         """
-        return (self.__size)
+        return self.__size
 
     @size.setter
     def size(self, value):
