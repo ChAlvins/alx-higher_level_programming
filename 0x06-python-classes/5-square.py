@@ -9,7 +9,7 @@ class Square:
         """instantiantion
         args: size of square side
         """
-        self.__self = size
+        self.__size = size
 
     def area(self):
         """returns square area"""
