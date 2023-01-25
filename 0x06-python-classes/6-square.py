@@ -11,8 +11,8 @@ class Square:
             size (int) of square
             position(int, int) of square
         """
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -45,7 +45,7 @@ class Square:
 
     def my_print(self):
         """prints in stdout the square with character #"""
-        if self.size == 0:
+        if self.__size == 0:
             print()
         else:
             print('\n'*self.__position[1], end='')
