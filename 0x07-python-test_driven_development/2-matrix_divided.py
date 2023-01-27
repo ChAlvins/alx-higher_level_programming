@@ -40,7 +40,7 @@ def matrix_divided(matrix, div):
         if len_elem != 0 and len(elements) != len_elem:
             raise TypeError(msg_size)
 
-        for num in element:
+        for num in elements:
             if not type(num) in (int, float):
                 raise TypeError(matrix_msg)
 
