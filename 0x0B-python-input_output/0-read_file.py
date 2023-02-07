@@ -8,6 +8,6 @@ def read_file(filename=""):
     no need to manage file permission or file doesn't exist exceptions
     """
 
-    with open(filename, mode="r", encoding="utf-8") as f:
-        read_data = f.read()
+    with open(filename, "r", encoding="utf-8") as file:
+        read_data = file.read()
         print(read_data, end='')
