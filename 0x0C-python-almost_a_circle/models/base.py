@@ -44,3 +44,14 @@ class Base:
                 string.append(cls.to_dictionary(i))
         with open(filename, "w", encoding="utf-8") as jsonfile:
             jsonfile.write(cls.to_json_string(string))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """eturns the list of the JSON string representation json_string:
+        args:
+            json_string: s a string representing a list of dictionaries
+        return: list represented by json_string
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
