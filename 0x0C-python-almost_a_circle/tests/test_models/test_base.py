@@ -402,7 +402,7 @@ class TestBase_load_from_file(unittest.TestCase):
 
 
 class TestBase_save_to_file_csv(unittest.TestCase):
-    """testing save_to_file_csv method of Base class."""
+    """testing save_to_file_csv method of Base"""
 
     @classmethod
     def tearDown(self):
@@ -543,6 +543,7 @@ class TestBase_load_from_file_csv(unittest.TestCase):
     def test_load_from_file_csv_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Base.load_from_file_csv([], 1)
+
 
 if __name__ == "__main__":
     unittest.main()
