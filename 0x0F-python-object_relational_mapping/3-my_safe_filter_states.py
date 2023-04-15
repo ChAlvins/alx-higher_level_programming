@@ -19,8 +19,7 @@ if __name__ == '__main__':
     # Getting the cursor
     cur = db.cursor()
     # Executing the msql statement and exit from db
-    cur.execute("SELECT * FROM states WHERE states.name LIKE BINARY %s",
-                (statename))
+    cur.execute("SELECT * FROM states WHERE name LIKE %s", (statename, ))
     rows = cur.fetchall()
     for row in rows:
         print(row)
