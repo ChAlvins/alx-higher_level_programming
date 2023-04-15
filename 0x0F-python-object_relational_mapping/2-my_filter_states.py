@@ -19,8 +19,8 @@ if __name__ == '__main__':
     # Getting the cursor
     cur = db.cursor()
     # Executing the msql statement and exit from db
-    cur.execute("SELECT * FROM states WHERE states.name LIKE BINARY '{}' ORDER
-                BY states.id".format(statename))
+    cur.execute("SELECT * FROM states WHERE states.name LIKE BINARY '{}'"
+                .format(statename))
     rows = cur.fetchall()
     for row in rows:
         print(row)
