@@ -422,8 +422,9 @@ guillaume@ubuntu:~/0x0F$
 
 ### [7. All states via SQLAlchemy]()
 
+
 Write a script that lists all  `State`  objects from the database  `hbtn_0e_6_usa`
-```
+
 -   Your script should take 3 arguments:  `mysql username`,  `mysql password`  and  `database name`
 -   You must use the module  `SQLAlchemy`
 -   You must import  `State`  and  `Base`  from  `model_state`  -  `from model_state import Base, State`
@@ -450,7 +451,6 @@ guillaume@ubuntu:~/0x0F$
 ```
 
 **No test cases needed**
-```
 
 ### [8. First state]()
 
