@@ -20,7 +20,7 @@ if __name__ == '__main__':
     cur = db.cursor()
     # Executing the msql statement and exit from db
     num_rows = cur.execute("SELECT * FROM states WHERE states.name LIKE BINARY
-                           '{}' ORDER BY states.id ASC".format(state_name))
+                           '{}' ORDER BY states.id ASC".format(statename))
     rows = cur.fetchall()
     for row in rows:
         print(row)
