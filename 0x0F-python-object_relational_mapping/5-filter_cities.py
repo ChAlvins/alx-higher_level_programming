@@ -24,9 +24,14 @@ if __name__ == '__main__':
                     WHERE states.name = %s
                 ORDER BY cities.id ASC;
             """
-    cur.execute(query, (state_name,))
+    num_rows = cur.execute(query, (state_name, ))
     rows = cur.fetchall()
+    i = 1
     for row in rows:
-        print(row)
+        print(row[0], end='')
+        if i < num_rows:
+            print(end=', ')
+        i += 1
+    print()
     cur.close()
     db.close()
