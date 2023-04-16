@@ -19,12 +19,9 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     # create instance of new custom session class
     session = Session()
-    states = session.query(State).filter(State.name.contains('a'))\
+    states = session.query(State).filter(State.name.like('%a%'))\
         .order_by(State.id)
-    if state is not None:
-        for state in states:
-            print('{}: {}'.format(state.id, state.name))
-    else:
-        print('Nothing')
+    for state in states:
+        print('{}: {}'.format(state.id, state.name))
     # exit session
     session.close()
