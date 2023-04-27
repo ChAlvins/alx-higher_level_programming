@@ -3,5 +3,5 @@
 -- Results display the score and the name (in this order)
 -- Records are ordered by descending score.
 SELECT score, name FROM second_table
-WHERE name != ""
+WHERE name IS NOT NULL
 ORDER BY score DESC
