@@ -18,5 +18,5 @@ if __name__ == "__main__":
             print('{}: {}'.format(objects[i].get('sha'),
                                   objects[i].get('commit').get('author').
                                   get('name')))
-    except ValueError:
+    except Exception:
         pass
