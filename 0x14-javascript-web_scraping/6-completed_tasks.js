@@ -1,24 +1,26 @@
 #!/usr/bin/node
 const request = require('request');
 const url = process.argv[2];
-let responsedata;
-const dict = {};
 
 request(url, function (error, response, body) {
   if (error) {
     console.error(error);
-  } else {
-    responsedata = JSON.parse(body);
-    responsedata.forEach(function (result) {
-      if (result.completed === true) {
-        const userid = result.userId;
-        if (result.completed === false) {
-          dict[userid] = 0;
+  }
+  if (response.statusCode === 200) {
+    const completedTasks = {};
+    const todos = JSON.parse(body);
+    for (const i in todos) {
+      const todo = todos[i];
+      if (todo.completed === true) {
+        if (completedTasks[todo.userId] === undefined) {
+          completedTasks[todo.userId] = 1;
         } else {
-          dict[userid] += 1;
+          completedTasks[todo.userId]++;
         }
       }
-    });
-    console.log(dict);
+    }
+    console.log(completedTasks);
+  } else {
+    console.error(error);
   }
 });
