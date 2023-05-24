@@ -12,7 +12,7 @@ request(url, function (error, response, body) {
     responsedata.forEach(function (result) {
       if (result.completed === true) {
         const userid = result.userId;
-        if (!(userid in dict)) {
+        if (result.completed === false) {
           dict[userid] = 0;
         } else {
           dict[userid] += 1;
